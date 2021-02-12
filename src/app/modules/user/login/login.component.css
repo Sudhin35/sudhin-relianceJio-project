@@ -1,0 +1,43 @@
+#form_login {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 30%;
+}
+
+button {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+@media (min-width: 320px) {
+  #form_login {
+    width: 100%;
+  }
+}
+@media (min-width: 481px) {
+  #form_login {
+    width: 100%;
+  }
+}
+@media (min-width: 641px) {
+  #form_login {
+    width: 100%;
+  }
+}
+@media (min-width: 961px) {
+  #form_login {
+    width: 100%;
+  }
+}
+@media (min-width: 1025px) {
+  #form_login {
+    width: 30%;
+  }
+}
+@media (min-width: 1281px) {
+  #form_login {
+    width: 30%;
+  }
+}

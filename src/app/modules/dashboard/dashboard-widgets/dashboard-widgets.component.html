@@ -1,0 +1,91 @@
+<app-header></app-header>
+<div *ngIf="loading" class="loader"></div>
+<div *ngIf="!loading">
+  <div class="row margin_bottom">
+    <div class="image-upload">
+      <label for="file-input">
+        <div class="example-icon" title="Click to attach file">
+          <div appButtonColor [primary]="true" class="btn" mat-button>Upload Data</div>
+        </div>
+      </label>
+      <input
+        id="file-input"
+        type="file"
+        (change)="onFileChange($event)"
+        multiple="false"
+      />
+    </div>
+    <div
+      appButtonColor
+      [primary]="false"
+      class="btn mat-button"
+      (click)="exportSampleSheet()"
+      mat-button
+    >
+      Sample Data
+    </div>
+  </div>
+  <div class="row col-md-12">
+    <div class="row col-md-6">
+      <div class="col-md-6">
+        <mat-card>
+          <mat-card-title>Area Chart</mat-card-title>
+          <app-area-chart
+            [chartData]="chartData"
+            [chartLabels]="chartLabels"
+          ></app-area-chart>
+        </mat-card>
+      </div>
+      <div class="col-md-6">
+        <mat-card>
+          <mat-card-title>Doughnut Chart</mat-card-title>
+          <app-doughnut-chart
+            [chartData]="chartData"
+            [chartLabels]="chartLabels"
+          ></app-doughnut-chart>
+        </mat-card>
+      </div>
+      <div class="col-md-6">
+        <mat-card>
+          <mat-card-title>Bar Chart</mat-card-title>
+          <app-bar-chart
+            [chartData]="chartData"
+            [chartLabels]="chartLabels"
+          ></app-bar-chart>
+        </mat-card>
+      </div>
+      <div class="col-md-6">
+        <mat-card>
+          <mat-card-title>Pie Chart</mat-card-title>
+          <app-pie-chart
+            [chartData]="chartData"
+            [chartLabels]="chartLabels"
+          ></app-pie-chart>
+        </mat-card>
+      </div>
+      <div class="col-md-6">
+        <mat-card>
+          <mat-card-title>Radar Chart</mat-card-title>
+          <app-radar-chart
+            [chartData]="chartData"
+            [chartLabels]="chartLabels"
+          ></app-radar-chart>
+        </mat-card>
+      </div>
+      <div class="col-md-6">
+        <mat-card>
+          <mat-card-title>Bubble Chart</mat-card-title>
+          <app-combined-chart
+            [chartData]="chartData"
+            [chartLabels]="chartLabels"
+          ></app-combined-chart>
+        </mat-card>
+      </div>
+    </div>
+    <div class="col-md-6" *ngIf="locationData">
+      <mat-card class="map_card">
+        <app-angular-maps [mapData]="locationData"></app-angular-maps>
+      </mat-card>
+    </div>
+  </div>
+</div>
